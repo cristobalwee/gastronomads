@@ -86,7 +86,7 @@ class Landing extends Component {
           <Row>
             <Col id="nav-left" xs={4}><img src="/media/menu_white.svg" onClick={this.openSideBar.bind(this)}></img></Col>
             <Col id="nav-middle" xs={4}><Link to ="/"><img src="/media/logo_white.svg"></img></Link></Col>
-            <Col id="nav-right" xs={4}><input id="search-bar" onKeyPress={this.handleKeyPress} type="text"></input></Col>
+            <Col id="nav-right" xs={4}><input id="search-bar" onKeyPress={this.handleKeyPress} type="text"></input><Link to ="/"><img src="/media/search_white.svg"></img></Link></Col>
           </Row>
         </Grid>
         <div className="overlay"></div>
@@ -95,6 +95,13 @@ class Landing extends Component {
             <Col xs={5} md={5} xsOffset={1} mdOffset={1}>
               <h1>Barra Lima</h1>
               <p>Each plate is a poem, using enough empty space on the plate to create a poetic sense of dichotomy; a clear dance of hot and cold, salty and sweet. Ingredients are painted on luxurious platters to create visually stunning works, allowing the patron to enjoy before they’ve even begun.</p>
+              <Link to="/featured" data={articles}><button className="main-btn">Read more</button></Link>&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/about"><button className="main-btn-alt">Our criteria</button></Link>
+            </Col>
+          </Row>
+          <Row className="featured-responsive">
+            <Col xs={12}>
+              <h1>Barra Lima</h1>
+              <p>Each plate is a poem, using enough empty space on the plate to create a poetic sense of dichotomy; a clear dance of hot and cold, salty and sweet.</p>
               <Link to="/featured" data={articles}><button className="main-btn">Read more</button></Link>&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/about"><button className="main-btn-alt">Our criteria</button></Link>
             </Col>
           </Row>

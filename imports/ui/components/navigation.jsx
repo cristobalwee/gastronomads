@@ -38,7 +38,7 @@ class Navigation extends Component {
           <Row>
             <Col id="nav-left" xs={4}><img onClick={this.openSideBar.bind(this)} src="/media/menu_black.svg"></img></Col>
             <Col id="nav-middle" xs={4}><Link to ="/"><img src="/media/logo_black.svg"></img></Link></Col>
-            <Col id="nav-right" xs={4}><input id="inputsearch" onKeyPress={this.handleKeyPress} type="text"></input></Col>
+            <Col id="nav-right" xs={4}><input id="inputsearch" onKeyPress={this.handleKeyPress} type="text"></input><Link to ="/"><img src="/media/search_black.svg"></img></Link></Col>
           </Row>
         </Grid>
       </div>
