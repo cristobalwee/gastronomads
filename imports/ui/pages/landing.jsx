@@ -25,6 +25,7 @@ class Landing extends Component {
   }
 
   componentDidMount(e) {
+    window.scrollTo(0, 0);
     $(document).ready(function() {
       var winH = $(window).height() - 500;
       $(window).scroll(function() {
@@ -47,10 +48,27 @@ class Landing extends Component {
     //$('.side-bar').css("display", "block");
   }
 
+  openSearch(event) {
+    $('.responsive-search-bar').css("display", "block");
+    $('.responsive-search-bar').css("top", "0");
+    $('.nav-overlay').css("display", "block");
+    $('.nav-overlay').css("opacity", "1");
+  }
+
+  closeSearch(event) {
+    $('.responsive-search-bar').css("top", "-50%");
+    $('.responsive-search-bar').css("display", "none");
+    $('.nav-overlay').css("opacity", "0");
+    $('.nav-overlay').css("display", "none");
+  }
+
   handleKeyPress(event) {
     if(event.key === 'Enter') {
       console.log("entered");
       searchText = $('#search-bar').val();
+      if (!searchText) {
+        searchText = $('#responsive-input-search').val();
+      }
       window.location.assign('/articles?search=' + searchText);
     }
   }
@@ -86,7 +104,7 @@ class Landing extends Component {
           <Row>
             <Col id="nav-left" xs={4}><img src="/media/menu_white.svg" onClick={this.openSideBar.bind(this)}></img></Col>
             <Col id="nav-middle" xs={4}><Link to ="/"><img src="/media/logo_white.svg"></img></Link></Col>
-            <Col id="nav-right" xs={4}><input id="search-bar" onKeyPress={this.handleKeyPress} type="text"></input><Link to ="/"><img src="/media/search_white.svg"></img></Link></Col>
+            <Col id="nav-right" xs={4}><input id="search-bar" onKeyPress={this.handleKeyPress} type="text"></input><img onClick={this.openSearch.bind(this)} src="/media/search_white.svg"></img></Col>
           </Row>
         </Grid>
         <div className="overlay"></div>

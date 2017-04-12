@@ -19,6 +19,10 @@ import NavigationScroll from '../components/navigationscroll.jsx';
 import SideBar from '../components/sidebar.jsx';
 
 class ArticleList extends Component {
+  componentDidMount(e) {
+    window.scrollTo(0, 0);
+  }
+  
   render() {
     const { loading, articles } = this.props;
     console.log(this.props.location);
