@@ -17,15 +17,13 @@ class NavigationScroll extends Component {
   }
 
   openSearch(event) {
-    $('.responsive-search-bar').css("display", "block");
     $('.responsive-search-bar').css("top", "0");
     $('.nav-overlay').css("display", "block");
     $('.nav-overlay').css("opacity", "1");
   }
 
   closeSearch(event) {
-    $('.responsive-search-bar').css("top", "-100px");
-    $('.responsive-search-bar').css("display", "none");
+    $('.responsive-search-bar').css("top", "-50%");
     $('.nav-overlay').css("opacity", "0");
     $('.nav-overlay').css("display", "none");
   }

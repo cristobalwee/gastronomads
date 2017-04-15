@@ -5,6 +5,11 @@ var cloudinary = require('cloudinary');
 //https://atmospherejs.com/lepozepo/cloudinary
 
 Meteor.startup(() => {
+  if (Meteor.isServer) {
+    Articles._ensureIndex({
+      "$**": "text"
+    });
+  }
   cloudinary.config({
     cloud_name: 'gastronomads',
     api_key: '177489615167771',
