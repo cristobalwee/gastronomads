@@ -29,17 +29,75 @@ class ArticleList extends Component {
 
   render() {
     const { loading, articles, searchArticles } = this.props;
-    const query = (this.props.location.search).split('=')[1];
+    let query = (this.props.location.search).split('=')[1];
+    if (query) {
+      if (query.indexOf('%20') != -1) {
+        query = query.split('%20');
+        splitted = true;
+      }
+      query = query.toLowerCase();
+    }
+    let splitted = false;
     let trueArticles = articles;
     if (this.props.location.search) {
       $('#search-query').css("display", "block");
-      let queried = [];
       let indices = [];
       for (var i = 0; i < articles.length; i++) {
-        queried.push(articles[i].url);
-        if ((articles[i].url).indexOf(query) != -1) {
-          console.log(queried[i]);
-          indices.push(i);
+        if (splitted) {
+          for (var j = 0; j < query.length; j++) {
+            if ((articles[i].title.toLowerCase()).indexOf(query[j]) != -1) {
+              if(indices.indexOf(i) == -1) {
+                indices.push(i);
+              }
+            }
+            if ((articles[i].review[0].one.toLowerCase()).indexOf(query[j]) != -1) {
+              if(indices.indexOf(i) == -1) {
+                indices.push(i);
+              }
+            }
+            if ((articles[i].review[1].two.toLowerCase()).indexOf(query[j]) != -1) {
+              if(indices.indexOf(i) == -1) {
+                indices.push(i);
+              }
+            }
+            if ((articles[i].review[2].three.toLowerCase()).indexOf(query[j]) != -1) {
+              if(indices.indexOf(i) == -1) {
+                indices.push(i);
+              }
+            }
+            if ((articles[i].review[3].four.toLowerCase()).indexOf(query[j]) != -1) {
+              if(indices.indexOf(i) == -1) {
+                indices.push(i);
+              }
+            }
+          }
+        }
+        else {
+          if ((articles[i].title.toLowerCase()).indexOf(query) != -1) {
+            if(indices.indexOf(i) == -1) {
+              indices.push(i);
+            }
+          }
+          if ((articles[i].review[0].one.toLowerCase()).indexOf(query) != -1) {
+            if(indices.indexOf(i) == -1) {
+              indices.push(i);
+            }
+          }
+          if ((articles[i].review[1].two.toLowerCase()).indexOf(query) != -1) {
+            if(indices.indexOf(i) == -1) {
+              indices.push(i);
+            }
+          }
+          if ((articles[i].review[2].three.toLowerCase()).indexOf(query) != -1) {
+            if(indices.indexOf(i) == -1) {
+              indices.push(i);
+            }
+          }
+          if ((articles[i].review[3].four.toLowerCase()).indexOf(query) != -1) {
+            if(indices.indexOf(i) == -1) {
+              indices.push(i);
+            }
+          }
         }
       }
       trueArticles = []
@@ -80,7 +138,7 @@ class ArticleList extends Component {
           <Grid>
             <Row id="search-query">
               <Col xs={12}>
-                <p>Search results for: <span className="black">"{query}"</span></p>
+                <p>Search results for: <span className="black">"{splitted ? query.map(function(obj, i) {if (i == query.length - 1) {return obj} return obj + " "}) : query}"</span></p>
               </Col>
             </Row>
             <Row>
