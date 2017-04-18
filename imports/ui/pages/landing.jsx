@@ -78,8 +78,9 @@ class Landing extends Component {
     let searchText = "";
     const featuredArticle = articles[0];
     console.log(featuredArticle);
-    articles.pop()
+    //articles.pop()
     let notFeatured = articles.reverse();//articles.slice(1, articles.length + 1)
+    notFeatured.splice(1, 1);
     console.log(notFeatured);
 
     let List;

@@ -22,22 +22,39 @@ class ArticleList extends Component {
   componentDidMount(e) {
     window.scrollTo(0, 0);
   }
-  
+
+  search(params) {
+
+  }
+
   render() {
-    const { loading, articles } = this.props;
-    console.log(this.props.location);
+    const { loading, articles, searchArticles } = this.props;
+    const query = (this.props.location.search).split('=')[1];
+    let trueArticles = articles;
     if (this.props.location.search) {
-      let queried = articles.indexOf("quaint");
-      console.log(queried);
+      $('#search-query').css("display", "block");
+      let queried = [];
+      let indices = [];
+      for (var i = 0; i < articles.length; i++) {
+        queried.push(articles[i].url);
+        if ((articles[i].url).indexOf(query) != -1) {
+          console.log(queried[i]);
+          indices.push(i);
+        }
+      }
+      trueArticles = []
+      for (var i = 0; i < indices.length; i++) {
+        trueArticles.push(articles[indices[i]]);
+      }
     }
 
     let List;
-    if (!articles || !articles.length) {
+    if (!trueArticles || !articles.length) {
       List = (
         <h1 className="error">Oh dear, it appears something's gone wrong. &#129300;</h1>
       );
     } else {
-      List = articles.reverse().map((article, i) => (
+      List = trueArticles.reverse().map((article, i) => (
         <Col key={i} sm={6} md={3}>
           <Article url={article.url} title={article.title} description={article.description} img={article.img}></Article>
         </Col>
@@ -61,6 +78,11 @@ class ArticleList extends Component {
         <Navigation/>
         <div id="articlelist">
           <Grid>
+            <Row id="search-query">
+              <Col xs={12}>
+                <p>Search results for: <span className="black">"{query}"</span></p>
+              </Col>
+            </Row>
             <Row>
               {loading ? <Loading/> : ArticleListPage}
             </Row>
@@ -80,6 +102,6 @@ export default createContainer(() => {
   const list = Meteor.subscribe('articlesList');
   return {
     loading: !(list.ready()),
-    articles: Articles.find({}).fetch(),
+    articles: Articles.find({}).fetch()
   };
 }, ArticleList);

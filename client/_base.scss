@@ -29,6 +29,10 @@ html {
   display: none;
 }
 
+.black {
+  color: black;
+}
+
 .main-btn {
   background-color: white;
   color: black;
@@ -801,6 +805,22 @@ html {
 #articlelist {
   position: relative;
   top: 120px;
+
+  #search-query {
+    display: none;
+    padding: none;
+
+    div {
+       padding: none;
+     }
+
+    p {
+      color: gray;
+      font-family: $font-secondary;
+      font-size: 16px;
+      margin: 0 0 10px 0;
+    }
+  }
 
   .article {
     text-align: center;
