@@ -18,6 +18,7 @@ import LoadingArticle from '../components/loadingarticle.jsx';
 import Navigation from '../components/navigation.jsx';
 import NavigationScroll from '../components/navigationscroll.jsx';
 import SideBar from '../components/sidebar.jsx';
+import Footer from '../components/footer.jsx';
 
 class Landing extends Component {
   constructor(props) {

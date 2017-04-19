@@ -39,9 +39,9 @@ class ArticleList extends Component {
     }
     let splitted = false;
     let trueArticles = articles;
+    let indices = []
     if (this.props.location.search) {
       $('#search-query').css("display", "block");
-      let indices = [];
       for (var i = 0; i < articles.length; i++) {
         if (splitted) {
           for (var j = 0; j < query.length; j++) {
@@ -117,6 +117,14 @@ class ArticleList extends Component {
           <Article url={article.url} title={article.title} description={article.description} img={article.img}></Article>
         </Col>
       ));
+    }
+
+    if (query) {
+      if (!indices.length) {
+        List = (
+          <h1 className="no-results">Looks like that article doesn't exist. &#129300;</h1>
+        );
+      }
     }
 
     let ArticleListPage = (

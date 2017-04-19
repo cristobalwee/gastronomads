@@ -79,6 +79,14 @@ html {
   text-align: center;
 }
 
+.no-results {
+  color: black;
+  font-family: $font-primary;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 15vh;
+}
+
 .loading {
   text-align: center;
   width: 100%;
@@ -513,6 +521,13 @@ html {
   left: 0;
   //background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
+}
+
+.nav-footer {
+  position: relative;
+  bottom: 0;
+  background-color: $border;
+  text-align: center;
 }
 
 #landing {
