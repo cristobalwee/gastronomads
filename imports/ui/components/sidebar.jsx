@@ -29,7 +29,7 @@ class SideBar extends Component {
         <Link to="/"><img src="/media/logo_black.svg"></img></Link>
         <Link className="link" to="/articles"><p>Articles</p></Link>
         <Link className="link" to="/about"><p>About</p></Link>
-        <Link className="link" to="/about"><p>Criteria</p></Link>
+        <Link className="link" to="/criteria"><p>Criteria</p></Link>
         <Link className="link" to="/about"><p>Contact</p></Link>
         <div className="footer">
           <a href="https://www.facebook.com/gastronomadsofficial/" target="_blank"><button id="fb"></button></a>

@@ -17,6 +17,7 @@ import ArticleList from '../../ui/pages/articlelist.jsx';
 import Loading from '../../ui/components/loading.jsx';
 import NoMatch from '../../ui/components/nomatch.jsx';
 import Featured from '../../ui/pages/featured.jsx';
+import Criteria from '../../ui/pages/criteria.jsx';
 
 export const renderRoutes = () => (
   <Router>
@@ -27,6 +28,7 @@ export const renderRoutes = () => (
       <Route path="/articles/:id" component={ Article }/>
       <Route exact path="/articles" component={ ArticleList }/>
       <Route path="/featured" component={ Featured }/>
+      <Route path="/criteria" component={ Criteria }/>
       <Route path="*" component={ NoMatch }/>
     </div>
   </Router>

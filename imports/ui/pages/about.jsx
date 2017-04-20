@@ -25,21 +25,12 @@ class About extends Component {
           <Navigation/>
           <Grid>
             <Row>
-              <Col xs={12} md={6}>
-                <div className="about-container">
-                  <div id="imgleft" src="/media/photo1.jpg"></div>
-                  <h2>Marcelo Gra&ntilde;a</h2>
-                  <h4>Copywriter + Gastronomic Connosseur</h4>
-                  <p>Los sabores de mi lindo Perú en un plato que produce más que una incógnita sonrisa directo del corazón. A pictoresque rendition of Peru's delicious secrets. A pictoresque rendition of Peru's delicious secrets. Thank you Cosme in Lima, Perú</p>
-                </div>
-              </Col>
-              <Col xs={12} md={6}>
-                <div className="about-container">
-                  <div id="imgright" src="/media/photo1.jpg"></div>
-                  <h2>Cristobal Gra&ntilde;a</h2>
-                  <h4>Designer + Full Stack Developer</h4>
-                  <p>Los sabores de mi lindo Perú en un plato que produce más que una incógnita sonrisa directo del corazón. A pictoresque rendition of Peru's delicious secrets. A pictoresque rendition of Peru's delicious secrets. Thank you Cosme in Lima, Perú</p>
-                </div>
+              <Col xs={12} md={12}>
+                <h1>Under construction... &#128736;</h1>
+                <h3>In the meantime, <Link className="no-decoration" to="/">&larr; go back home</Link></h3>
+                <br></br>
+                <a href="https://www.facebook.com/gastronomadsofficial/" target="_blank"><button id="fb"></button></a>
+                <a href="https://www.instagram.com/gastronomadsofficial/" target="_blank"><button id="insta"></button></a>
               </Col>
             </Row>
           </Grid>
