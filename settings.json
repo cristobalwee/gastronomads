@@ -1,7 +1,0 @@
-{
-  "galaxy.meteor.com": {
-     "env": {
-       "MONGO_URL": "mongodb://admin:QaxY786@ds111851.mlab.com:11851/gastronomads"
-     }
-   }
-}
