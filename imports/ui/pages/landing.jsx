@@ -118,14 +118,14 @@ class Landing extends Component {
             <Col xs={5} md={5} xsOffset={1} mdOffset={1}>
               <h1>Barra Lima</h1>
               <p>Each plate is a poem, using enough empty space on the plate to create a poetic sense of dichotomy; a clear dance of hot and cold, salty and sweet. Ingredients are painted on luxurious platters to create visually stunning works, allowing the patron to enjoy before they’ve even begun.</p>
-              <Link to="/featured" data={articles}><button className="main-btn">Read more</button></Link>&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/about"><button className="main-btn-alt">Our criteria</button></Link>
+              <Link to="/featured" data={articles}><button className="main-btn">Read more</button></Link>&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/criteria"><button className="main-btn-alt">Our criteria</button></Link>
             </Col>
           </Row>
           <Row className="featured-responsive">
             <Col xs={12}>
               <h1>Barra Lima</h1>
               <p>Each plate is a poem, using enough empty space on the plate to create a poetic sense of dichotomy; a clear dance of hot and cold, salty and sweet.</p>
-              <Link to="/featured" data={articles}><button className="main-btn">Read more</button></Link>&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/about"><button className="main-btn-alt">Our criteria</button></Link>
+              <Link to="/featured" data={articles}><button className="main-btn">Read more</button></Link>&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/criteria"><button className="main-btn-alt">Our criteria</button></Link>
             </Col>
           </Row>
         </Grid>

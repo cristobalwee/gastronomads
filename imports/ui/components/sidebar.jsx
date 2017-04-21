@@ -25,6 +25,7 @@ class SideBar extends Component {
   render() {
     return(
       <div className="side-bar">
+        <div className="cache"></div>
         <img onClick={this.closeSideBar.bind(this)} className="dismiss" src="/media/close_icon.svg"></img>
         <Link to="/"><img src="/media/logo_black.svg"></img></Link>
         <Link className="link" to="/articles"><p>Articles</p></Link>

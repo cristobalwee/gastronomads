@@ -24,6 +24,7 @@ class ArticlePage extends Component {
   render() {
     const { match, articles, loading } = this.props;
     const found = (Articles.find({url: match.params.id}).fetch())[0];
+    let imgArr = []
 
     let Page;
     if (!found || !articles.length) {
@@ -33,6 +34,23 @@ class ArticlePage extends Component {
     } else {
       console.log(found.restaurant);
       const review = found.review
+      if (Number.isInteger((found.restaurant[0]).gastro_rating)) {
+        for (var i = 0; i < (found.restaurant[0]).gastro_rating; i++) {
+          imgArr.push(1);
+        }
+        for (var i = 0; i < 6 - (found.restaurant[0]).gastro_rating; i++) {
+          imgArr.push(0);
+        }
+      }
+      else {
+        for (var i = 0; i < (found.restaurant[0]).gastro_rating - 0.5; i++) {
+          imgArr.push(1);
+        }
+        imgArr.push(0.5);
+        for (var i = 0; i < 6 - ((found.restaurant[0]).gastro_rating + 0.5); i++) {
+          imgArr.push(0);
+        }
+      }
       Page = (
         <div>
           <Col xs={12} md={7}>
@@ -51,18 +69,15 @@ class ArticlePage extends Component {
               <img src={found.img}></img>
             </div>
             <div className="article-content">
-              <span><p className="inline">Gastro rating:</p></span>&nbsp;
-              <h4 className="inline">{(found.restaurant[0]).gastro_rating}</h4><br></br><br></br>
-              <span><p className="inline">Nomad rating:</p></span>&nbsp;
-              <h4 className="inline">{(found.restaurant[1]).nomad_rating}</h4><br></br><br></br>
+              <span><img className="inline" src="/media/globe_empty.svg"></img></span>&nbsp;
+              <h4 className="inline">Rating: </h4>&nbsp;<h4 className="inline">{(found.restaurant[0]).gastro_rating} out of 6 stars</h4><br></br><br></br>
               <span><img className="inline" src="/media/icon_house_alt.svg"></img></span>&nbsp;
               <h4 className="inline">{(found.restaurant[3]).address}</h4><br></br><br></br>
               <span><img className="inline" src="/media/icon_currency.svg"></img></span>&nbsp;
               <h4 className="inline">{(found.restaurant[2]).price} S/. per person</h4><br></br><br></br>
               <span><img className="inline" src="/media/icon_phone.svg"></img></span>&nbsp;
-              <h4 className="inline">{(found.restaurant[4]).phone}</h4><br></br><br></br>
-              <span><img className="inline" src="/media/icon_link.svg"></img></span>&nbsp;
-              <a href={(found.restaurant[5]).website} target="_blank"><h4 className="inline">{(found.restaurant[5]).website}</h4></a>
+              <h4 className="inline">{(found.restaurant[4]).phone}</h4><br></br><br className="responsive"></br>
+              <div className="center web-btn"><a href={(found.restaurant[5]).website} target="_blank"><button className="second-btn">Visit website</button></a></div>
           </div>
           </Col>
         </div>

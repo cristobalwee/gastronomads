@@ -22,6 +22,8 @@ class Featured extends Component {
   }
 
   render() {
+    const imgArr = [1, 1, 1, 1, 0, 0];
+
     return(
       <div>
         <SideBar/>
@@ -44,18 +46,15 @@ class Featured extends Component {
                   <img src="https://res.cloudinary.com/gastronomads/image/upload/v1491486036/BarraLima2_xrdrkq.jpg"></img>
                 </div>
                 <div className="article-content">
-                  <span><p className="inline">Gastro rating:</p></span>&nbsp;
-                  <h4 className="inline">4</h4><br></br><br></br>
-                  <span><p className="inline">Nomad rating:</p></span>&nbsp;
-                  <h4 className="inline">0</h4><br></br><br></br>
+                  <span><img className="inline" src="/media/globe_empty.svg"></img></span>&nbsp;
+                  <h4 className="inline">Rating: </h4>&nbsp;<h4 className="inline">4 out of 6 stars</h4><br></br><br></br>
                   <span><img className="inline" src="/media/icon_house_alt.svg"></img></span>&nbsp;
                   <h4 className="inline">Av. Conquistadores 904, San Isidro</h4><br></br><br></br>
                   <span><img className="inline" src="/media/icon_currency.svg"></img></span>&nbsp;
                   <h4 className="inline">60 S/. per person</h4><br></br><br></br>
                   <span><img className="inline" src="/media/icon_phone.svg"></img></span>&nbsp;
-                  <h4 className="inline">969-636-234</h4><br></br><br></br>
-                  <span><img className="inline" src="/media/icon_link.svg"></img></span>&nbsp;
-                  <a href="https://www.facebook.com/barralimaperu/ " target="_blank"><h4 className="inline">'https://www.facebook.com/barralimaperu/'</h4></a>
+                  <h4 className="inline">969-636-234</h4><br></br><br className="responsive"></br>
+                  <div className="center web-btn"><a href="https://www.facebook.com/barralimaperu/" target="_blank"><button className="second-btn">Visit website</button></a></div>
                 </div>
               </Col>
             </Row>
