@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>social_linkedin_circle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-406.000000, -618.000000)" fill="#FFFFFF">
+            <g id="social_linkedin_circle" transform="translate(406.000000, 618.000000)">
+                <path d="M20,0 C8.955,0 0,8.955 0,20 C0,31.045 8.955,40 20,40 C31.045,40 40,31.045 40,20 C40,8.9525 31.045,0 20,0 L20,0 Z M15,29.6875 L10,29.6875 L10,12.1875 L15,12.1875 L15,29.6875 L15,29.6875 Z M12.655,11.115 C11.36,11.115 10.3125,10.065 10.3125,8.77 C10.3125,7.475 11.3625,6.425 12.655,6.425 C13.95,6.4275 15,7.4775 15,8.77 C15,10.065 13.95,11.115 12.655,11.115 L12.655,11.115 Z M32.5,29.6875 L27.5,29.6875 L27.5,18.8675 C27.5,17.6 27.1375,16.7125 25.58,16.7125 C22.9975,16.7125 22.5,18.8675 22.5,18.8675 L22.5,29.6875 L17.5,29.6875 L17.5,12.1875 L22.5,12.1875 L22.5,13.86 C23.215,13.3125 25,12.19 27.5,12.19 C29.1225,12.19 32.5,13.16 32.5,19.02 L32.5,29.6875 L32.5,29.6875 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

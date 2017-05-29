@@ -25,12 +25,25 @@ class About extends Component {
           <Navigation/>
           <Grid>
             <Row>
-              <Col xs={12} md={12}>
-                <h1>Under construction... &#128736;</h1>
-                <h3>In the meantime, <Link className="no-decoration" to="/">&larr; go back home</Link></h3>
-                <br></br>
-                <a href="https://www.facebook.com/gastronomadsofficial/" target="_blank"><button id="fb"></button></a>
-                <a href="https://www.instagram.com/gastronomadsofficial/" target="_blank"><button id="insta"></button></a>
+              <Col xs={12} md={6} className="about-container">
+                <div id="imgleft">
+                  <div className="img-content">
+                    <h2>Marcelo</h2>
+                    <p>Food Critic + Founder</p>
+                    <a href="https://www.facebook.com/marce1000" target="_blank"><img src="/media/social_facebook_white.svg"></img></a>
+                    <a href="https://www.linkedin.com/in/marcelograna/" target="_blank"><img src="/media/social_linkedin.svg"></img></a>
+                  </div>
+                </div>
+              </Col>
+              <Col xs={12} md={6} className="about-container">
+                <div id="imgright">
+                  <div className="img-content">
+                    <h2>Cristobal</h2>
+                    <p>Designer + Developer</p>
+                    <a href="https://www.facebook.com/cristobal.granasamanez" target="_blank"><img src="/media/social_facebook_white.svg"></img></a>
+                    <a href="https://github.com/cristobalwee" target="_blank"><img src="/media/github.svg"></img></a>
+                  </div>
+                </div>
               </Col>
             </Row>
           </Grid>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>social_facebook_circle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-336.000000, -618.000000)" fill="#FFFFFF">
+            <g id="social_facebook_circle" transform="translate(336.000000, 618.000000)">
+                <path d="M20,0 C8.955,0 0,8.955 0,20 C0,31.045 8.955,40 20,40 C31.045,40 40,31.045 40,20 C40,8.9525 31.045,0 20,0 L20,0 Z M25.17,19.9975 L21.8925,20 L21.89,32 L17.3925,32 L17.3925,20 L14.3925,20 L14.3925,15.865 L17.3925,15.8625 L17.3875,13.4275 C17.3875,10.0525 18.3025,8 22.275,8 L25.585,8 L25.585,12.1375 L23.515,12.1375 C21.9675,12.1375 21.8925,12.715 21.8925,13.7925 L21.8875,15.8625 L25.6075,15.8625 L25.17,19.9975 L25.17,19.9975 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

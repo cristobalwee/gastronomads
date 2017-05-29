@@ -31,7 +31,7 @@ class SideBar extends Component {
         <Link className="link" to="/articles"><p>Articles</p></Link>
         <Link className="link" to="/about"><p>About</p></Link>
         <Link className="link" to="/criteria"><p>Criteria</p></Link>
-        <Link className="link" to="/about"><p>Contact</p></Link>
+        <a href="mailto:editorial@gastronomads.co" className="no-decoration"><p>Contact</p></a>
         <div className="footer">
           <a href="https://www.facebook.com/gastronomadsofficial/" target="_blank"><button id="fb"></button></a>
           <a href="https://www.instagram.com/gastronomadsofficial/" target="_blank"><button id="insta"></button></a>

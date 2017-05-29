@@ -39,6 +39,10 @@ class NavigationScroll extends Component {
     }
   }
 
+  outsideOverlay(event) {
+    console.log("clicked");
+  }
+
   render() {
     return(
       <div>

@@ -21,4 +21,5 @@ Articles.schema = new SimpleSchema({
   "restaurant.$.phone": {type: String},
   "restaurant.$.website": {type: String},
   "restaurant.$.date": {type: String},
+  location: {type: String}
 });

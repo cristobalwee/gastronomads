@@ -4,6 +4,7 @@ import { Grid } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { Articles } from '../../api/articles/articles.jsx';
+import { Helmet } from 'react-helmet';
 import $ from 'jquery';
 import {
   BrowserRouter as Router,
@@ -23,6 +24,10 @@ import Footer from '../components/footer.jsx';
 class Landing extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentWillMount(e) {
+    window.prerenderReady = false;
   }
 
   componentDidMount(e) {
@@ -81,9 +86,9 @@ class Landing extends Component {
     console.log(featuredArticle);
     //articles.pop()
     let notFeatured = articles.reverse();//articles.slice(1, articles.length + 1)
-    notFeatured.splice(1, 1);
-    if (notFeatured.length > 8) {
-      notFeatured.slice(0, 8);
+    notFeatured.splice(0, 1);
+    if (notFeatured.length >= 8) {
+      notFeatured = notFeatured.slice(0, 8);
     }
     console.log(notFeatured);
 
@@ -102,6 +107,15 @@ class Landing extends Component {
 
     let LandingPage = (
       <div>
+        <Helmet>
+          <title>Gastronomads</title>
+          <meta property="og:url" content="https://www.gastronomads.co"/>
+          <meta property="og:type" content="website"/>
+          <meta property="og:title" content="Gastronomads Official website"/>
+          <meta property="og:description" content="Weekly restaurant reviews and rankings from around the world."/>
+          <meta property="og:image" content="https://res.cloudinary.com/gastronomads/image/upload/v1490291052/labarralima_jaj8i7.png"/>
+          <link rel="canonical" href="https://www.gastronomads.co"/>
+        </Helmet>
         <SideBar/>
         <div className="nav-overlay"></div>
         <NavigationScroll/>
@@ -116,16 +130,16 @@ class Landing extends Component {
         <Grid id="landing">
           <Row className="featured">
             <Col xs={5} md={5} xsOffset={1} mdOffset={1}>
-              <h1>Barra Lima</h1>
-              <p>Each plate is a poem, using enough empty space on the plate to create a poetic sense of dichotomy; a clear dance of hot and cold, salty and sweet. Ingredients are painted on luxurious platters to create visually stunning works, allowing the patron to enjoy before they’ve even begun.</p>
-              <Link to="/featured" data={articles}><button className="main-btn">Read more</button></Link>&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/criteria"><button className="main-btn-alt">Our criteria</button></Link>
+              <h1>Primos</h1>
+              <p>Perhaps if it weren’t the best, if it was just another chicken, the flame would have died long ago. The space remains, to this day, almost the same: giant, fun, and unpretentious. Out of all the restaurants that have inhabited Lima’s magic corner, Primos has done it best by a wide margin.</p>
+              <Link to="/articles/primos" data={articles}><button className="main-btn">Read more</button></Link>&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/criteria"><button className="main-btn-alt">Our criteria</button></Link>
             </Col>
           </Row>
           <Row className="featured-responsive">
             <Col xs={12}>
-              <h1>Barra Lima</h1>
-              <p>Each plate is a poem, using enough empty space on the plate to create a poetic sense of dichotomy; a clear dance of hot and cold, salty and sweet.</p>
-              <Link to="/featured" data={articles}><button className="main-btn">Read more</button></Link>&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/criteria"><button className="main-btn-alt">Our criteria</button></Link>
+              <h1>Primos</h1>
+              <p>The space remains, to this day, almost the same: giant, fun, and unpretentious. Out of all the restaurants that have inhabited Lima’s magic corner, Primos has done it best by a wide margin.</p>
+              <Link to="/articles/primos" data={articles}><button className="main-btn">Read more</button></Link>&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/criteria"><button className="main-btn-alt">Our criteria</button></Link>
             </Col>
           </Row>
         </Grid>

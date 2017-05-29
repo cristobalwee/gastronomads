@@ -1,5 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { Articles } from '../../api/articles/articles.jsx';
+import { Helmet } from 'react-helmet';
+import ReactDOMServer from 'react-dom/server';
+import Express from 'express';
 var cloudinary = require('cloudinary');
 
 //https://atmospherejs.com/lepozepo/cloudinary
@@ -9,6 +12,8 @@ Meteor.startup(() => {
     Articles._ensureIndex({
       "$**": "text"
     });
+    app = Express();
+    app.use(require('prerender-node'));
   }
   cloudinary.config({
     cloud_name: 'gastronomads',

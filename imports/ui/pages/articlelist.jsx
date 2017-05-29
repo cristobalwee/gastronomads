@@ -23,21 +23,22 @@ class ArticleList extends Component {
     window.scrollTo(0, 0);
   }
 
-  search(params) {
-
-  }
-
   render() {
     const { loading, articles, searchArticles } = this.props;
     let query = (this.props.location.search).split('=')[1];
+    let splitted = false;
     if (query) {
       if (query.indexOf('%20') != -1) {
         query = query.split('%20');
         splitted = true;
+        for (var i = 0; i < query.length; i++) {
+          query[i] = query[i].toLowerCase();
+        }
       }
-      query = query.toLowerCase();
+      else {
+        query = query.toLowerCase();
+      }
     }
-    let splitted = false;
     let trueArticles = articles;
     let indices = []
     if (this.props.location.search) {
