@@ -100,7 +100,7 @@ class Landing extends Component {
     } else {
       List = notFeatured.map((article, i) => (
         <Col key={i} sm={6} md={3}>
-          <Article url={article.url} title={article.title} description={article.description} img={article.img}></Article>
+          <Article url={article.url} title={article.title} description={article.description} img={article.img} location={article.location} rating={(article.restaurant[0]).gastro_rating} date={(article.restaurant[6]).date}></Article>
         </Col>
       ));
     }
