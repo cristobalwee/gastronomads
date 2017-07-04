@@ -29,7 +29,7 @@ const Article = (props) => (
 Article.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  img: PropTypes.image,
+  img: PropTypes.string,
   location: PropTypes.string,
   rating: PropTypes.number
 };

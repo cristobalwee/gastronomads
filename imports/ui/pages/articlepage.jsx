@@ -16,6 +16,7 @@ import Navigation from '../components/navigation.jsx';
 import Article from '../components/article.jsx';
 import Loading from '../components/loading.jsx';
 import SideBar from '../components/sidebar.jsx';
+import Rating from '../components/rating.jsx';
 
 class ArticlePage extends Component {
   componentWillMount(e) {
@@ -71,9 +72,14 @@ class ArticlePage extends Component {
           <Col xs={12} md={7}>
             <h4>{(found.restaurant[6]).date}&nbsp;&nbsp;&nbsp;<span className="inline location"><img src="/media/icon_pin.svg"></img><h4 className="inline">{found.location}</h4></span></h4>
             <h1>{found.title}</h1>
-            <div className="restaurant-container center responsive">
+            <a href={(found.restaurant[5]).website} target="_blank"><div className="restaurant-container center responsive">
               <img src={found.img}></img>
-            </div>
+
+              <div className="article-info clearfix">
+                <span className="inline location left"><img src="/media/icon_currency.svg"></img><h4 className="inline">{(found.restaurant[2]).price} S/. per person</h4></span>
+                <span className="inline right"><Rating rating={(found.restaurant[0]).gastro_rating}/></span>
+              </div>
+            </div></a>
             <p>{review[0].one}</p>
             <p>{review[1].two}</p>
             <p>{review[2].three}</p>
@@ -83,18 +89,19 @@ class ArticlePage extends Component {
           </Col>
           <Col xs={12} md={5}>
             <div className="restaurant-container center responsivehide">
-              <img src={found.img}></img>
-            </div>
-            <div className="article-content">
-              <span><img className="inline" src="/media/globe_empty.svg"></img></span>&nbsp;
-              <h4 className="inline">Rating: </h4>&nbsp;<h4 className="inline">{(found.restaurant[0]).gastro_rating} out of 6 stars</h4><br></br><br></br>
-              <span><img className="inline" src="/media/icon_house_alt.svg"></img></span>&nbsp;
-              <h4 className="inline">{(found.restaurant[3]).address}</h4><br></br><br></br>
-              <span><img className="inline" src="/media/icon_currency.svg"></img></span>&nbsp;
-              <h4 className="inline">{(found.restaurant[2]).price} S/. per person</h4><br></br><br></br>
-              <span><img className="inline" src="/media/icon_phone.svg"></img></span>&nbsp;
-              <h4 className="inline">{(found.restaurant[4]).phone}</h4><br></br><br className="responsive"></br>
-              <div className="center web-btn"><a href={(found.restaurant[5]).website} target="_blank"><button className="second-btn">Visit website</button></a></div>
+              <a href={(found.restaurant[5]).website} target="_blank"><div className="img" style={{backgroundImage: "url(" + found.img + ")"}}>
+                <div className="article-overlay">
+                  <div id="web-more">Visit Website</div>
+                </div>
+              </div></a>
+              <div className="article-info clearfix no-padding">
+                <span className="inline location left"><img src="/media/icon_house_alt.svg"></img><h4 className="inline">{(found.restaurant[3]).address}</h4></span>
+                <span className="inline location right"><img src="/media/icon_phone.svg"></img><h4 className="inline">{(found.restaurant[4]).phone}</h4></span>
+              </div>
+              <div className="article-info clearfix">
+                <span className="inline location left"><img src="/media/icon_currency.svg"></img><h4 className="inline">{(found.restaurant[2]).price} S/. per person</h4></span>
+                <span className="inline right"><Rating rating={(found.restaurant[0]).gastro_rating}/></span>
+              </div>
             </div>
           </Col>
         </div>

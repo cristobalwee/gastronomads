@@ -86,7 +86,7 @@ class Landing extends Component {
     console.log(featuredArticle);
     //articles.pop()
     let notFeatured = articles.reverse();//articles.slice(1, articles.length + 1)
-    notFeatured.splice(0, 1);
+    notFeatured.splice(1, 1);
     if (notFeatured.length >= 8) {
       notFeatured = notFeatured.slice(0, 8);
     }

@@ -707,7 +707,7 @@ a {
         height: 100%;
         opacity: 0;
         @include transition(all 0.2s ease-in-out);
-        padding-top: 5rem;
+        padding-top: 7rem;
 
         #read-more {
           text-align: center;
@@ -961,54 +961,74 @@ a {
   padding-bottom: 50px;
 
   .restaurant-container {
-    border: solid 8px $border;
+    border: solid 1px $border;
+    @include border-radius(4px);
+
+    .no-padding {
+      padding-bottom: 0 !important;
+    }
+
+    .img {
+      background-position: center;
+      background-size: cover;
+      height: 55vh;
+
+      &:hover {
+        .article-overlay {
+          opacity: 1;
+        }
+      }
+
+      .article-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        @include transition(all 0.2s ease-in-out);
+
+        #web-more {
+          text-align: center;
+          font-family: $font-secondary;
+          color: white;
+          border: solid 2px white;
+          width: 45%;
+          margin: 0 auto;
+          position: relative;
+          top: 50%;
+          padding: 0.3rem 1rem;
+          @include border-radius(4px);
+          @include transition(all 0.2s ease-in-out);
+          @include transform(translateY(-50%));
+
+          &:hover {
+            background-color: white;
+            color: black;
+          }
+        }
+      }
+    }
+
+    .article-info {
+      margin-top: 0;
+      padding: 15px 15px;
+      text-align: left;
+
+      h4 {
+        font-family: $font-secondary;
+        font-weight: 400;
+        margin-top: 0;
+        font-size: 14px;
+        color: black !important;
+
+        &:hover {
+          color: black !important;
+        }
+      }
+    }
 
     h4 {
       padding: 5px;
-    }
-  }
-
-  .article-content {
-    margin-top: 10px;
-
-    .rating {
-      padding: 10px 0;
-      text-align: center;
-
-      img {
-        height: 25px;
-        margin-left: 2px;
-        margin-right: 2px;
-        margin-bottom: 5px;
-      }
-    }
-
-    .second-btn {
-      background-color: white;
-      color: black;
-      border: solid 1px black;
-      font-family: $font-secondary;
-      text-align: center;
-      font-size: 14px;
-      padding: 4px 22px;
-      margin: 0 auto;
-      @include transition(all 0.3s ease);
-      @include border-radius(4px);
-
-      &:hover {
-        background-color: $border;
-      }
-    }
-
-    .web-btn {
-      text-align: center;
-      width: 100%;
-      @include border-radius(4px);
-    }
-
-    img {
-      height: 15px;
-      margin-bottom: 5px;
     }
   }
 
@@ -1057,29 +1077,117 @@ a {
   .article {
     text-align: center;
     background-color: white;
-    border: solid 4px $border;
+    border: solid 1px $border;
+    @include border-radius(4px);
     margin-bottom: 10px;
     max-height: 600px;
     text-overflow: ellipsis;
+    @include transition(all 0.2s ease-in-out);
+
+    &::after {
+      content: "";
+      box-shadow: 0 3px 9px rgba(0,0,0,0.3);
+      opacity: 0;
+      @include transition(all 0.2s ease-in-out);
+    }
+
+    &:hover {
+       @include transform(translateY(-2px));
+       box-shadow: 0 3px 9px rgba(0,0,0,0.3);
+
+       .article-overlay {
+         opacity: 1;
+
+         #read-more {
+           @include transform(translateY(0));
+         }
+       }
+
+       &::after {
+         opacity: 1;
+       }
+    }
+
+    // &:hover {
+    //   box-shadow: 0 3px 9px rgba(0,0,0,0.3);
+    //   @include transform(translateY(-2px));
+    //
+      // .article-overlay {
+      //   opacity: 1;
+      // }
+    // }
+
+    > div {
+      @include border-top-left-radius(4px);
+      @include border-top-right-radius(4px);
+
+      .article-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        @include transition(all 0.2s ease-in-out);
+        padding-top: 7rem;
+
+        #read-more {
+          text-align: center;
+          font-family: $font-secondary;
+          color: white;
+          border: solid 2px white;
+          width: 45%;
+          margin: 0 auto;
+          padding: 0.3rem 1rem;
+          @include border-radius(4px);
+          @include transition(all 0.2s ease-in-out);
+          @include transform(translateY(-2px));
+
+          &:hover {
+            background-color: white;
+            color: black;
+          }
+        }
+      }
+    }
 
     h2 {
       color: black;
       font-family: $font-primary;
       font-weight: 500;
-      padding: 0 5px;
-      margin-top: 25px;
+      padding: 0 15px;
+      margin-top: 15px;
       font-size: 24px;
+      text-align: left;
+      margin-bottom: 0;
     }
 
     p {
-      color: black;
+      color: #5a5a5a;
       font-family: $font-secondary;
       text-align: justify;
-      line-height: 160%;
+      line-height: 140%;
       padding: 0 15px;
       font-size: 12px;
-      margin-top: 15px;
-      max-height: 200px;
+      margin-top: 10px;
+      max-height: 150px;
+    }
+
+    .article-info {
+      margin-top: 3rem;
+      padding: 15px 15px;
+      text-align: left;
+
+      h4 {
+        font-family: $font-secondary;
+        font-weight: 400;
+        margin-top: 0;
+        font-size: 14px;
+        color: black !important;
+
+        &:hover {
+          color: black !important;
+        }
+      }
     }
 
     .img {
@@ -1236,7 +1344,7 @@ a {
     float: right;
   }
 
-  .article {
+  .article, .restaurant-container {
     .location {
       float: left;
     }
@@ -1312,6 +1420,10 @@ a {
         font-size: 14px;
         margin-top: 15px;
       }
+
+      .img {
+        height: 250px;
+      }
     }
   }
 
@@ -1325,6 +1437,25 @@ a {
         padding: 0 15px;
         font-size: 14px;
         margin-top: 15px;
+      }
+
+      .img {
+        height: 250px;
+      }
+    }
+  }
+
+  #articlepage {
+    .restaurant-container {
+      .no-padding {
+        padding-bottom: 0 !important;
+      }
+
+      .location {
+        img {
+          height: 20px;
+          padding: 0 0px 3px 0;
+        }
       }
     }
   }

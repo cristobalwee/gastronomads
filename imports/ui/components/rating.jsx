@@ -32,13 +32,13 @@ const Rating = (props) => {
       {imgArr.map((image, i) => {
         switch(image) {
           case 0:
-            return <img src="/media/icon_star_empty.svg"></img>
+            return <img key={i} src="/media/icon_star_empty.svg"></img>
           case 0.5:
-            return <img src="/media/icon_star_half.svg"></img>
+            return <img key={i} src="/media/icon_star_half.svg"></img>
           case 1:
-            return <img src="/media/icon_star_alt.svg"></img>
+            return <img key={i} src="/media/icon_star_alt.svg"></img>
           default:
-            return <img src="/media/icon_star_empty.svg"></img>
+            return <img key={i} src="/media/icon_star_empty.svg"></img>
         }
       })}
     </span>
