@@ -1248,6 +1248,45 @@ a {
   }
 }
 
+#renovations {
+  h1 {
+    color: black;
+    font-family: $font-primary;
+    font-weight: 900;
+  }
+
+  p {
+    font-family: $font-secondary;
+    font-weight: 100;
+    font-size: 1.25rem;
+  }
+}
+
+#renovations-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  padding-bottom: 1rem;
+
+  p {
+    font-family: $font-secondary;
+    font-weight: 100;
+    font-size: 1rem;
+  }
+
+  a {
+    color: black;
+  }
+
+  #ig {
+    border-bottom: solid 3px #ffabda;
+  }
+
+  #fb {
+    border-bottom: solid 3px #87afff;
+  }
+}
+
 
 @keyframes headeranim {
   0% {
@@ -1309,6 +1348,28 @@ a {
 }
 
 @media only screen and (max-width: 640px) {
+  body {
+    padding: 0 !important;
+  }
+
+  #renovations {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-family: $font-secondary;
+      font-weight: 100;
+      font-size: 1rem;
+    }
+  }
+
+  #renovations-footer {
+    p {
+      font-size: 0.85rem;
+    }
+  }
+
   .responsive {
     display: block;
   }
